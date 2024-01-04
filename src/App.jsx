@@ -11,6 +11,7 @@ import Cart from './pages/cart/Cart'
 import Dashboard from './pages/admin/dashboard/Dashboard'
 import NoPage from './pages/nopage/NoPage'
 import MyState from './context/data/myState';
+import ProductInfo from './components/productInfo/ProductInfo';
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/order" element={<Order />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/productinfo/:id" element={<ProductInfo />} />
         <Route path="/*" element={<NoPage />} />
       </Routes>
     </Router>
