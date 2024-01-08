@@ -21,6 +21,7 @@ import UpdateProduct from './pages/admin/pages/UpdateProduct';
 
 
 
+
 const App = () => {
   return (
   <MyState>
@@ -36,6 +37,9 @@ const App = () => {
         <Route path="/addproduct" element={<AddProduct />} />
         <Route path="/updateproduct" element={<UpdateProduct/>} />
         <Route path="/*" element={<NoPage />} />
+       
+        
+        
       </Routes>
     </Router>
     </MyState>
