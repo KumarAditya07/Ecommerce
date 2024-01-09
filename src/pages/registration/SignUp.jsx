@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth,fireDB  } from '../../firebase/FireBaseConfig';  
-import { addDoc, collection } from 'firebase/firestore';
+import { Timestamp, addDoc, collection } from 'firebase/firestore';
 import Loader from '../../components/loader/Loader';
 import myContext from '../../context/data/myContext';
 
@@ -26,13 +26,13 @@ function SignUp() {
 
         try {
             const users = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(users);
+            // console.log(users);
 
             const user = {
                 name: name,
                 uid: users.user.uid,
                 email: users.user.email,
-                // time : Timestamp.now()
+                time : Timestamp.now()
             }
             const userRef = collection(fireDB, "users")
             await addDoc(userRef, user);
